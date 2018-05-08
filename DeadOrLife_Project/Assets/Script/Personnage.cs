@@ -34,6 +34,8 @@ namespace Perso {
         public string[] Planete = new string[] { "Pollution", "Population", "Déchet" };
 
         string Sc = "Science";
+
+        //public GameObject Next;
         
         //richesse mondiale / seuil de pauvreté
         //peau -> appartenance ethnique
@@ -42,11 +44,21 @@ namespace Perso {
         public Text Txt1;
         public Text Txt2;
 
+        string choice;
+
         int i = 0;
+
+       /* void Awake()
+        {
+            Txt1 = GetComponent<Text>();
+
+
+        }*/
 
         // Use this for initialization
         void Start() {
-            CreateP();
+            //Txt1 = gameObject.GetComponent<Text>();
+            Txt1.text = CreateP(choice);
             i = 1;
         }
 
@@ -55,18 +67,9 @@ namespace Perso {
         // Update is called once per frame
         void Update() {
             
-            if (i < 3)
-            {
-                CreateP();
-                i++;
-            }
-            else
-            {
-                i = 0;
-            }
         }
         //fonction de creation de description du personnage
-        public void CreateP()
+        public string CreateP(string choix)
         {
 
 
@@ -85,18 +88,27 @@ namespace Perso {
 
             if (r < 51)
             {
-                Txt1.text = "Nom : " + res_pren + "      " + "Prénom : " + res_pref +
+                choix = "Nom : " + res_pren + "      " + "Prénom : " + res_pref +
                     "\n \n" + "Pays : " + res_cont + "       " + "Religion : " + res_reli +
                     "\n \n" + "Métier : " + res_tra + "      " + /*"Politique : " + Politique[Random.Range(0, Politique.Length)] +*/
                     "\n \n" + "Genre : " + Genre[1] + "       " + "Orientation : " + res_ori;
             }
             else
             {
-                Txt2.text = "Nom : " + res_pren+ "      " + "Prénom : " + res_prem +
+                choix = "Nom : " + res_pren+ "      " + "Prénom : " + res_prem +
                     "\n \n" + "Pays : " + res_cont + "       " + "Religion : " + res_reli +
                     "\n \n" + "Métier : " + res_tra + "      " + /*"Politique : " + Politique[Random.Range(0, Politique.Length)] +*/
                     "\n \n" + "Genre : " + Genre[0] + "       " + "Orientation : " + res_ori;
             }
+
+            return choix;
+        }
+
+        public void ResetP()
+        {
+            Txt1.text = "";
+            Txt2.text = "";
+
         }
     }
 }
