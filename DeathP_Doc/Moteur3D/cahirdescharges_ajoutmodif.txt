@@ -1,0 +1,17 @@
+Cahier des charges ajout/modif :
+
+aspect economique a analyser !!!
+
+diagramme fonctionnel avant l'interface
+
+canal de distribution
+
+gantt chemin critique
+
+system steam unity ?
+
+Concurrence :
+
+Orwell  ( interface )
+
+BeHolder ( concept changement monde)

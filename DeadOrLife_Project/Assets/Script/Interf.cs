@@ -8,12 +8,22 @@ namespace Interface
 {
     public class Interf : MonoBehaviour
     {
+        //Variable d'appel des gameObject
+        public GameObject PanelPerson, Menu, Option, Histori, Next_B;
+        public Text descriptionPersonnage, descriptionHHistorique, descriptionFHistorique;
 
-        public GameObject PanelPerson, Menu, Option, Historique;
-
-        public Text descriptionPersonnage;
+        //Variable de recuperation dans d'autre classe
         string ch;
+        string ch_Histo;
+
+        //Variable d'appel de classe
+        Histoire.Historique histoire = new Histoire.Historique();
         Perso.Personnage perso = new Perso.Personnage();
+
+        //Compteur pour la boucle de jeu
+        int compteur_Perso = 0;
+        int compteur_Histo = 0;
+        
 
 
         // Use this for initialization
@@ -33,8 +43,10 @@ namespace Interface
         //Montre le panel des personnages
         public void PanelPA()
         {
-
+            //Active le panel
             PanelPerson.SetActive(true);
+
+            //Set le text du panel
             descriptionPersonnage.text = perso.CreateP(ch);
             
         }
@@ -42,20 +54,41 @@ namespace Interface
         //Ferme le panel personnage
         public void PanelPC()
         {
+            //active le panel
             PanelPerson.SetActive(false);
+
+            //incremente le compteur
+            compteur_Perso++;
+
+            //Verifie le compteur pour ouvrir le panel historique au bout de 3 boucle
+            if(compteur_Perso > 2)
+            {
+                HistoriqueA();
+                Next_B.SetActive(false);
+
+            }
             
         }
-
+        //Montre le panel Historique
         public void HistoriqueA()
         {
-
-            Historique.SetActive(true);
+            //set les textes du panel historique puis l'active.
+            descriptionHHistorique.text = histoire.Choix_HHistorique(ch_Histo);
+            descriptionFHistorique.text = histoire.Choix_FHistorique(ch_Histo);
+            Histori.SetActive(true);
         }
 
-        //Ferme le panel personnage
+        //Ferme le panel Historique
         public void HistoriqueC()
         {
-            Historique.SetActive(false);
+            //desactive le panel historique
+            Histori.SetActive(false);
+            
+            //reset le compteur apres les 3 boucles puis reactive le bouton du panel personnage
+            compteur_Perso = 0;
+            Next_B.SetActive(true);
+            
+
         }
 
         //Ouve le panel menu

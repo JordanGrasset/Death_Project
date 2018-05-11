@@ -370,7 +370,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000007629431}
+  m_AnchoredPosition: {x: 0, y: -0.000007201961}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &93082028
@@ -591,8 +591,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 365617943}
-        m_MethodName: DLChoice
+      - m_Target: {fileID: 365617942}
+        m_MethodName: PanelPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1379,8 +1379,11 @@ MonoBehaviour:
   PanelPerson: {fileID: 374997171}
   Menu: {fileID: 948011211}
   Option: {fileID: 0}
-  Historique: {fileID: 369968418}
+  Histori: {fileID: 369968418}
+  Next_B: {fileID: 316670943}
   descriptionPersonnage: {fileID: 1307558979}
+  descriptionHHistorique: {fileID: 93082030}
+  descriptionFHistorique: {fileID: 57867313}
 --- !u!114 &365617943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1416,7 +1419,6 @@ MonoBehaviour:
   - Population
   - "D\xE9chet"
   Txt1: {fileID: 1307558979}
-  Txt2: {fileID: 1307558979}
 --- !u!1 &369968418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,6 +1512,7 @@ MonoBehaviour:
   descH: {fileID: 1249056428}
   descF: {fileID: 638537776}
   i: 0
+  j: 0
 --- !u!1 &374997171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,8 +1662,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 365617943}
-        m_MethodName: DLChoice
+      - m_Target: {fileID: 365617942}
+        m_MethodName: PanelPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4247,7 +4250,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 207093698}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

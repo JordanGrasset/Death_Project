@@ -8,9 +8,10 @@ using UnityEngine.UI;
 namespace Perso {
     public class Personnage : MonoBehaviour {
 
-        //Tableau d'initialisation des variables
+        //Variable de l'age                                             //TO_DO : Mettre l'age
         public int age;
 
+        //Variable d'appel de classe permettant de chercher l'élément pour l'affichage final
         Cont.Continent cont = new Cont.Continent();
 
         Reli.Religion reli = new Reli.Religion();
@@ -24,7 +25,9 @@ namespace Perso {
         Hand.Handicap hand = new Hand.Handicap();
 
         Pre.Prenom pre = new Pre.Prenom();
+        //
 
+        //Variable Pas encore utiliser ou qui n'as pas encore ete mise en place                     //TO_DO ; Mettre en place ces variable ci_dessous
         public string[] Genre = new string[] { "Masculin", "Feminin" };
 
        // public string[] Politique = new string[] { "N/A", "Capitaliste", "Communiste", "Socialiste", "Fachisme", "Marxisme", "Anarchiste" };
@@ -35,31 +38,23 @@ namespace Perso {
 
         string Sc = "Science";
 
-        //public GameObject Next;
         
         //richesse mondiale / seuil de pauvreté
         //peau -> appartenance ethnique
         //auteur Orwell
 
+        //Variable d'appel du gameObject Texte
         public Text Txt1;
-        public Text Txt2;
+        
 
+        //variable pour set le texte pour l'initialisation
         string choice;
-
-        int i = 0;
-
-       /* void Awake()
-        {
-            Txt1 = GetComponent<Text>();
-
-
-        }*/
 
         // Use this for initialization
         void Start() {
-            //Txt1 = gameObject.GetComponent<Text>();
+            //Initialisation du texte dans le gameObject de la scene
             Txt1.text = CreateP(choice);
-            i = 1;
+            
         }
 
 
@@ -85,6 +80,7 @@ namespace Perso {
             string res_hand = hand.Rand_Hand(); // TO DO : Same
 
             
+            //Random du genre + affichage de la description
 
             if (r < 51)
             {
@@ -104,11 +100,5 @@ namespace Perso {
             return choix;
         }
 
-        public void ResetP()
-        {
-            Txt1.text = "";
-            Txt2.text = "";
-
-        }
     }
 }
