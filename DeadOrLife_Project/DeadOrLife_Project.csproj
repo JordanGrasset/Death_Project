@@ -225,6 +225,7 @@
     <Compile Include="Assets\Script\Continent.cs" />
     <Compile Include="Assets\Script\DeadLife.cs" />
     <Compile Include="Assets\Script\Handicap.cs" />
+    <Compile Include="Assets\Script\Historique.cs" />
     <Compile Include="Assets\Script\Interf.cs" />
     <Compile Include="Assets\Script\Menu.cs" />
     <Compile Include="Assets\Script\Orientation.cs" />

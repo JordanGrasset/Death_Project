@@ -10,32 +10,40 @@ namespace Interface
     {
         //Variable d'appel des gameObject
         public GameObject PanelPerson, Menu, Option, Histori, Next_B;
-        public Text descriptionPersonnage, descriptionHHistorique, descriptionFHistorique;
+        public Text descriptionPersonnage, descriptionHHistorique, descriptionFHistorique, date;
 
         //Variable de recuperation dans d'autre classe
         string ch;
         string ch_Histo;
+        
 
         //Variable d'appel de classe
         Histoire.Historique histoire = new Histoire.Historique();
         Perso.Personnage perso = new Perso.Personnage();
 
-        //Compteur pour la boucle de jeu
+        //Compteur pour la boucle de jeu et la date
         int compteur_Perso = 0;
         int compteur_Histo = 0;
+        int dt = 1787;
         
 
 
         // Use this for initialization
         void Start()
         {
-
+            
+            date.text = dt.ToString();
         }
 
         // Update is called once per frame
         void Update()
         {
-
+            date.text = dt.ToString();
+            
+            if(dt == 2017)
+            {
+                dt = 9999; // Fin de partie
+            }
         }
 
 
@@ -59,7 +67,7 @@ namespace Interface
 
             //incremente le compteur
             compteur_Perso++;
-
+            dt++;
             //Verifie le compteur pour ouvrir le panel historique au bout de 3 boucle
             if(compteur_Perso > 2)
             {
@@ -86,6 +94,7 @@ namespace Interface
             
             //reset le compteur apres les 3 boucles puis reactive le bouton du panel personnage
             compteur_Perso = 0;
+            dt++;
             Next_B.SetActive(true);
             
 
