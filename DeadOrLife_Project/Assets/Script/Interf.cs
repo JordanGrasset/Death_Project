@@ -9,12 +9,17 @@ namespace Interface
     public class Interf : MonoBehaviour
     {
         //Variable d'appel des gameObject
-        public GameObject PanelPerson, Menu, Option, Histori, Next_B;
-        public Text descriptionPersonnage, descriptionHHistorique, descriptionFHistorique, date;
+        public GameObject PanelPerson, Menu, Option, Histori, Next_B, ImageHHistorique;
+        public Text descriptionPersonnage, nHHistorique, nFHistorique, date, descHHisto, descFHisto;
+        //public Image imageH;
 
         //Variable de recuperation dans d'autre classe
         string ch;
         string ch_Histo;
+        string desc_H;
+        string desc_F;
+        Sprite img_H;
+        
         
 
         //Variable d'appel de classe
@@ -81,8 +86,14 @@ namespace Interface
         public void HistoriqueA()
         {
             //set les textes du panel historique puis l'active.
-            descriptionHHistorique.text = histoire.Choix_HHistorique(ch_Histo);
-            descriptionFHistorique.text = histoire.Choix_FHistorique(ch_Histo);
+            nHHistorique.text = histoire.Choix_HHistorique(ch_Histo);
+            nFHistorique.text = histoire.Choix_FHistorique(ch_Histo);
+            descHHisto.text = histoire.Desc_HHistorique(desc_H);
+            descFHisto.text = histoire.Desc_FHistorique(desc_F);
+
+            //ImageHHistorique.GetComponent<Image>().sprite = histoire.Img_HHistorique(img_H);  // TO DO : appel de la fonction pour le changement d'image
+            
+            //imageH.sprite = histoire.Img_HHistorique(img_H);
             Histori.SetActive(true);
         }
 
