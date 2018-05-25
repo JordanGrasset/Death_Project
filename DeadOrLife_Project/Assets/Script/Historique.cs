@@ -31,12 +31,6 @@ namespace Histoire
         //Variable d'appel de GameObject Texte,Image et Sprite
         public Text txtH;
         public Text txtF;
-        //public Image imgH;
-        //public Image imgF;
-        public Sprite[] spH;
-        public Sprite[] spF;
-
-        //public GameObject ImageHHistorique;
         
         //Compteur
         public int i = 0;
@@ -44,26 +38,19 @@ namespace Histoire
         // Use this for initialization
         void Start()
         {
-            //initialisation du compteur
-            //i = 0;
-            //ImageHHistorique.GetComponent<Image>().sprite = spH[i];
+
         }
 
         // Update is called once per frame
         void Update()
         {
-            
+
         }
 
         //Fonction de recherche du nom de la personnalité
         public string Choix_HHistorique(string choix_HHisto)
         {
             choix_HHisto= PersonneH[i];
-
-
-            
-            
-            //imgH.sprite = spH[j];
 
             //retourne le nom
             return choix_HHisto;
@@ -76,21 +63,10 @@ namespace Histoire
             return descH;
         }
 
-       public Sprite Img_HHistorique(Sprite imgH)
-        {
-            
-            imgH = spH[i];                      // TO DO : erreur la reference de l'objet est null / il n'arrive pas a recuperer le sprite dans le PC
-            Debug.Log(imgH.name);           
-            //imgH = spH[i];
-            return imgH;
-        }
-
         //Fonction de recherche du nom du personnage
         public string Choix_FHistorique(string choix_FHisto)
         {
             choix_FHisto = PersonneF[i];
-                                                                     //TO_DO : Trouver une solution a l'erreur de setting de la reference
-            //imgF.sprite = spF[j];
             
             //retourne le nom
             return choix_FHisto;
