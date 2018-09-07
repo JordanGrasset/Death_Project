@@ -33,7 +33,7 @@ namespace Cont
 
         public string[] ch = { };
 
-        public string Rand_Cont()
+        public string Rand_Cont() // cherche un continent puis retourne le pays de ce continent
         {
             
             int res = 0;
